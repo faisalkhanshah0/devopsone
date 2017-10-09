@@ -11,10 +11,13 @@ const os = require('os');
 // console.log(os.networkInterfaces());
 // console.log(os.platform());
 // console.log(os.userInfo().username);
-const crypto = require('crypto');
+var app = express()
 
-const secret = 'abcdefg';
-const hash = crypto.createHmac('sha256', secret)
-                   .update('I love cupcakes')
-                   .digest('hex');
-console.log(hash);
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
+
+var port = process.env.port || 3000;
+app.listen(port, () => {
+  console.log(`server is running at : ${port}`);
+});
