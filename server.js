@@ -1,23 +1,12 @@
-const express = require('express');
-const yargs = require('yargs');
-const request = require('request');
-const axios = require('axios');
-const os = require('os');
-// console.log(os.arch());
-// console.log(os.cpus());
-// console.log(os.endianness());
-// console.log(os.homedir());
-// console.log(os.hostname());
-// console.log(os.networkInterfaces());
-// console.log(os.platform());
-// console.log(os.userInfo().username);
-var app = express()
+var http=require('http');
 
-app.get('/', function (req, res) {
-  res.send('Hello World')
-})
+var server=http.createServer(function(req,res){
+   res.writeHead(200,{'Content-Type':'text/html'
+});
+   res.end('Hello World');
+});
 
-var port = process.env.port || 3000;
-app.listen(port, () => {
-  console.log(`server is running at : ${port}`);
+   var port=process.env.PORT || 3000;
+
+   server.listen(port);
 });
