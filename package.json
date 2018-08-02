@@ -14,5 +14,6 @@
     "express": "^4.16.1",
     "request": "^2.83.0",
     "yargs": "^9.0.1"
-  }
+  },
+  "bundledDependencies": ["express","axios","request","yargs"]
 }
